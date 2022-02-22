@@ -25,7 +25,7 @@ bakje = False
 bolletjesAantal = 0
 
 
-print("Welkom bij Papi Gelato je mag alle smaken kiezen zolang het maar vanille ijs is.")
+print("Welkom bij Papi Gelato")
 while True:
 
     #stap 1
