@@ -1,5 +1,5 @@
 def printError():
-    print("Sorry, dat snap ik niet...")
+    print("Sorry dat is geen optie die we aanbieden...")
 
 
 def vraagOmNummer(completeVraag):
