@@ -43,6 +43,14 @@ while True:
         else:
             print("Sorry, zulke grote bakken hebben we niet")
 
+
+    smaken = bolletjesAantal
+    #stap 1.5
+    while smaken > 0:
+        smaken -= 1
+        vraagOmTekst("Welke smaak wilt u voor bolletje nummer "+str(bolletjesAantal-smaken)+"? A) Aardbei, C) Chocolade, M) Munt of V) Vanille?", ["A","C","M","V"])
+        
+
     #stap 2
     if bakje != True:
         antwoord = vraagOmTekst(("Wilt u deze "+str(bolletjesAantal)+" bolletje(s) in A) een hoorntje of B) een bakje?"), ["A", "B"])
