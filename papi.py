@@ -22,7 +22,13 @@ def vraagOmTekst(completeVraag, keuzes):
 
 
 bakje = False
+bolletjesTotaal = 0
 bolletjesAantal = 0
+bolletjesPrijs = 1.10
+horrentjesAantal = 0
+horrentjesPrijs = 1.25
+bakjesAantal = 0
+bakjesPrijs = 0.75
 
 
 print("Welkom bij Papi Gelato")
@@ -34,16 +40,16 @@ while True:
         if bolletjesAantal <= 0:
             printError()
         elif bolletjesAantal <= 3:
-            bakje = False
             break
         elif bolletjesAantal <= 8:
             bakje = True
+            bakjesAantal += 1
             print("Dan krijgt u van mij een bakje met",str(bolletjesAantal),"bolletjes")
             break
         else:
             print("Sorry, zulke grote bakken hebben we niet")
 
-
+    bolletjesTotaal += bolletjesAantal
     smaken = bolletjesAantal
     #stap 1.5
     while smaken > 0:
@@ -55,13 +61,32 @@ while True:
     if bakje != True:
         antwoord = vraagOmTekst(("Wilt u deze "+str(bolletjesAantal)+" bolletje(s) in A) een hoorntje of B) een bakje?"), ["A", "B"])
         if antwoord == "B":
+            bakjesAantal += 1
             bakje = True
+        else:
+            horrentjesAantal += 1
+            bakje = False
 
     #stap 3 
     houder = ("hoorntje", "bakje")[bakje]
     antwoord = vraagOmTekst(("Hier is uw "+houder+" met "+str(bolletjesAantal)+" bolletje(s). Wilt u nog iets bestellen? (Y/N)"), ["Y","N"])
 
+    bakje = False
     if antwoord == "N":
+        bolletjesTotaalPrijs = round(bolletjesTotaal * bolletjesPrijs, 2)
+        horrentjesTotaalPrijs = round(horrentjesAantal * horrentjesPrijs, 2)
+        bakjesTotaalPrijs = round(bakjesAantal * bakjesPrijs, 2)
+        print("------[\"Papi Gelato\"]------\n")
+        if bolletjesAantal > 0:
+            print("Bolletjes    "+str(bolletjesTotaal)+" x €"+str(bolletjesPrijs)+"  = €"+str(bolletjesTotaalPrijs))
+        
+        if horrentjesAantal > 0:
+            print("Horrentjes    "+str(horrentjesAantal)+" x €"+str(horrentjesPrijs)+"  = €"+str(horrentjesTotaalPrijs))
+        
+        if bakjesAantal > 0:
+            print("Bakjes    "+str(bakjesAantal)+" x €"+str(bakjesPrijs)+"  = €"+str(bakjesTotaalPrijs))
+
+
         input("Bedankt en tot ziens!")
         quit()
 
