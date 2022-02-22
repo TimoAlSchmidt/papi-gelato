@@ -29,6 +29,9 @@ horrentjesAantal = 0
 horrentjesPrijs = 1.25
 bakjesAantal = 0
 bakjesPrijs = 0.75
+toppingTotaalPrijs = 0
+toppingPrijzen = (0.50, 0.30, 0.60, 0.90)
+
 
 
 print("Welkom bij Papi Gelato")
@@ -67,6 +70,16 @@ while True:
             horrentjesAantal += 1
             bakje = False
 
+    #stap 2.5
+    antwoord = vraagOmTekst("Wat voor topping wilt u: A) Geen, B) Slagroom, C) Sprinkels of D) Caramel Saus?", ["A", "B", "C", "D"])
+    nummer = ord(antwoord)-66
+    if nummer >= 0:
+        toppingTotaalPrijs += toppingPrijzen[nummer]
+        if nummer == 2 and bakje:
+            toppingTotaalPrijs += 0.30 #voeg 30 toe als bakje wordt gebruikt
+
+
+
     #stap 3 
     houder = ("hoorntje", "bakje")[bakje]
     antwoord = vraagOmTekst(("Hier is uw "+houder+" met "+str(bolletjesAantal)+" bolletje(s). Wilt u nog iets bestellen? (Y/N)"), ["Y","N"])
@@ -76,8 +89,9 @@ while True:
         bolletjesTotaalPrijs = round(bolletjesTotaal * bolletjesPrijs, 2)
         horrentjesTotaalPrijs = round(horrentjesAantal * horrentjesPrijs, 2)
         bakjesTotaalPrijs = round(bakjesAantal * bakjesPrijs, 2)
+        toppingTotaalPrijs = round(toppingTotaalPrijs, 2)
         print("------[\"Papi Gelato\"]------\n")
-        if bolletjesAantal > 0:
+        if bolletjesTotaal > 0:
             print("Bolletjes    "+str(bolletjesTotaal)+" x €"+str(bolletjesPrijs)+"  = €"+str(bolletjesTotaalPrijs))
         
         if horrentjesAantal > 0:
@@ -85,6 +99,9 @@ while True:
         
         if bakjesAantal > 0:
             print("Bakjes    "+str(bakjesAantal)+" x €"+str(bakjesPrijs)+"  = €"+str(bakjesTotaalPrijs))
+
+        if toppingTotaalPrijs > 0:
+            print("topping      1 x €"+str(toppingTotaalPrijs)+"  = €"+str(toppingTotaalPrijs))
 
 
         input("Bedankt en tot ziens!")
