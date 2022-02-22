@@ -24,7 +24,7 @@ def vraagOmTekst(completeVraag, keuzes):
 bakje = False
 bolletjesTotaal = 0
 bolletjesAantal = 0
-bolletjesPrijs = 1.10
+bolletjesPrijs = 0.95
 horrentjesAantal = 0
 horrentjesPrijs = 1.25
 bakjesAantal = 0
