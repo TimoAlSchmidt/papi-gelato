@@ -33,7 +33,7 @@ toppingTotaalPrijs = 0
 toppingPrijzen = (0.50, 0.30, 0.60, 0.90)
 litersAantal = 0
 litersPrijs = 9.80
-
+btwPercent = 0.06
 
 print("Welkom bij Papi Gelato")
 antwoord = vraagOmTekst("Bent u 1) particulier of 2) zakelijk?", ["1", "2"])
@@ -124,5 +124,5 @@ else:
     print("Liter                "+str(litersAantal)+" x "+str(litersPrijs)+" = €"+str(litersTotaalPrijs))
     print("                            ------")
     print("Totaal                      = €"+str(litersTotaalPrijs))
-    print("BTW (9%)                    = €"+str(round(litersTotaalPrijs*0.09, 2)))
+    print("BTW (9%)                    = €"+str(round(litersTotaalPrijs*btwPercent, 2)))
     
