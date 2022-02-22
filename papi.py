@@ -61,7 +61,7 @@ if antwoord == "1":
         #stap 1.5
         while smaken > 0:
             smaken -= 1
-            vraagOmTekst("Welke smaak wilt u voor bolletje nummer "+str(bolletjesAantal-smaken)+"? A) Aardbei, C) Chocolade, M) Munt of V) Vanille?", ["A","C","M","V"])
+            vraagOmTekst("Welke smaak wilt u voor bolletje nummer "+str(bolletjesAantal-smaken)+"? A) Aardbei, C) Chocolade of V) Vanille?", ["A","C","V"])
 
         #stap 2
         if bakje != True:
@@ -117,7 +117,7 @@ else:
     #stap 1.5
     while smaken > 0:
         smaken -= 1
-        vraagOmTekst("Welke smaak wilt u voor liter nummer "+str(litersAantal-smaken)+"? A) Aardbei, C) Chocolade, M) Munt of V) Vanille?", ["A","C","M","V"])
+        vraagOmTekst("Welke smaak wilt u voor liter nummer "+str(litersAantal-smaken)+"? A) Aardbei, C) Chocolade of V) Vanille?", ["A","C","V"])
     
     litersTotaalPrijs = round(litersAantal*litersPrijs, 2)
     print("---------[\"Papi Gelato\"]---------\n")
